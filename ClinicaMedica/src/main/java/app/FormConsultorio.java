@@ -17,15 +17,12 @@ public class FormConsultorio extends javax.swing.JFrame {
      */
     public FormConsultorio() {
         initComponents();
-        /*
-        //Prueba conexion a la base de datos
-        CConexion objetoConexion = new CConexion();
-        objetoConexion.estableceConexion();*/
+        this.setLocationRelativeTo(null); //Centrar la ventana
+        txtId.setEnabled(false); //No mostrar el campo id al seleccionar una fila
         
         CConsultorio objetoConsultorio = new CConsultorio();
         DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
         this.tbConsultorios.setModel(model);
-        //objetoConsultorio.mostrarConsultorios(tbConsultorios);
     }
 
     /**
@@ -65,6 +62,11 @@ public class FormConsultorio extends javax.swing.JFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
 
@@ -125,6 +127,11 @@ public class FormConsultorio extends javax.swing.JFrame {
 
             }
         ));
+        tbConsultorios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbConsultoriosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbConsultorios);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -169,10 +176,31 @@ public class FormConsultorio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+
         CConsultorio objetoConsultorio = new CConsultorio();
         objetoConsultorio.InsertarConsultorio(txtNombre);
+        
+        //Prueba Mostrar tabla con el nuevo registro
+        DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
+        this.tbConsultorios.setModel(model);
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void tbConsultoriosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbConsultoriosMouseClicked
+        // TODO add your handling code here:
+        CConsultorio objetoConsultorio = new CConsultorio();
+        objetoConsultorio.seleccionarConsultorio(tbConsultorios, txtId, txtNombre);
+    }//GEN-LAST:event_tbConsultoriosMouseClicked
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        CConsultorio objetoConsultorio = new CConsultorio();
+        objetoConsultorio.modificarConsultorios(txtId,txtNombre);
+        
+        //Prueba Mostrar tabla con el nuevo registro
+        DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
+        this.tbConsultorios.setModel(model);
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
