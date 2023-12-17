@@ -4,6 +4,8 @@
  */
 package app;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author eefloresU
@@ -21,7 +23,9 @@ public class FormConsultorio extends javax.swing.JFrame {
         objetoConexion.estableceConexion();*/
         
         CConsultorio objetoConsultorio = new CConsultorio();
-        objetoConsultorio.mostrarConsultorios(tbConsultorios);
+        DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
+        this.tbConsultorios.setModel(model);
+        //objetoConsultorio.mostrarConsultorios(tbConsultorios);
     }
 
     /**

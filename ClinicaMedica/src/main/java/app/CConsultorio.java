@@ -60,24 +60,24 @@ public class CConsultorio {
     }
     
     //Función para mostrar registros existentes
-    public void mostrarConsultorios(JTable paramTotalConsultorios){
+    public DefaultTableModel mostrarConsultorios(){
         CConexion objetoConexion = new CConexion();
         
         DefaultTableModel modelo = new DefaultTableModel();
         
         TableRowSorter<TableModel> OrdenarTabla = new TableRowSorter();
-        paramTotalConsultorios.setRowSorter(OrdenarTabla);
+        //paramTotalConsultorios.setRowSorter(OrdenarTabla);
         
         String sql = "";
         
         modelo.addColumn("Id");
         modelo.addColumn("Nombre");
         
-        paramTotalConsultorios.setModel(modelo);
+        //paramTotalConsultorios.setModel(modelo);
         
         sql = "SELECT * FROM consultorios;";
         
-        String[] datos = new String[3];
+        String[] datos = new String[2];
         Statement st;
         
         try {
@@ -92,12 +92,12 @@ public class CConsultorio {
                 modelo.addRow(datos);
             }
             
-            paramTotalConsultorios.setModel(modelo);
+            //paramTotalConsultorios.setModel(modelo);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"No se pudo mostrar los registros, error: "+ e.toString());
         }
-        
+       return modelo;  
     }
     
 }
