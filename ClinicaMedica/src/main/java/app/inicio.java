@@ -9,6 +9,7 @@ package app;
 /**
  *
  * @author eefloresU
+ * @version 
  */
 public class inicio {
     public static void main(String[] args) {

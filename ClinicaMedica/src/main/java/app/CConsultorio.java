@@ -68,7 +68,7 @@ public class CConsultorio {
         TableRowSorter<TableModel> OrdenarTabla = new TableRowSorter();
         paramTotalConsultorios.setRowSorter(OrdenarTabla);
         
-        String sql = " ";
+        String sql = "";
         
         modelo.addColumn("Id");
         modelo.addColumn("Nombre");
@@ -77,7 +77,7 @@ public class CConsultorio {
         
         sql = "SELECT * FROM consultorios;";
         
-        String[] datos = new String[2];
+        String[] datos = new String[3];
         Statement st;
         
         try {
