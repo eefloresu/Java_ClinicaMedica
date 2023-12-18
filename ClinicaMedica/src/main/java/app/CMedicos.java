@@ -20,7 +20,6 @@ import javax.swing.table.TableRowSorter;
  * @author eefloresU
  */
 public class CMedicos {
-    
     int codigo;
     String identificacion;
     String nombres;
@@ -202,20 +201,20 @@ public class CMedicos {
         
         CConexion objetoConexion = new CConexion();
         
-        String consulta = "UPDATE medicos SET medicos.medidentificacion = ?, medicos.mednombres = ?, "
-                + "medicos.medapellidos = ?, medicos.medEspecialidad = ?, medicos.medtelefono = ?, "
-                + "medicos.medcorreo = ? WHERE medicos.idMedico = ?;";
+        String consulta = "UPDATE medicos SET medicos.medidentificacion=?, medicos.mednombres=?, "
+                + "medicos.medapellidos=?, medicos.medEspecialidad=?, medicos.medtelefono=?, "
+                + "medicos.medcorreo=? WHERE medicos.idMedico = ?;";
         
         try {
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
             //Incorporar parametros
             cs.setString(1, getIdentificacion());
-            cs.setInt(2, getCodigo());
-            cs.setString(3, getNombres());
-            cs.setString(4, getApellidos());
-            cs.setString(5, getEspecialidad());
-            cs.setString(6, getTelefono());
-            cs.setString(7, getCorreo());
+            cs.setString(2, getNombres());
+            cs.setString(3, getApellidos());
+            cs.setString(4, getEspecialidad());
+            cs.setString(5, getTelefono());
+            cs.setString(6, getCorreo());
+            cs.setInt(7, getCodigo()); //asignar el valor al campo idMedico.
             
             cs.execute();
             
