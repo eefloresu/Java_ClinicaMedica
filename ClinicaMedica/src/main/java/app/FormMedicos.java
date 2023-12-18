@@ -103,6 +103,11 @@ public class FormMedicos extends javax.swing.JFrame {
         });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -270,6 +275,15 @@ public class FormMedicos extends javax.swing.JFrame {
         DefaultTableModel model = objetoMedicos.mostrarMedicos();
         this.tbMedicos.setModel(model);
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        CMedicos objetoMedicos = new CMedicos();
+        objetoMedicos.eliminarMedicos(txtId);
+        
+        //Mostrar tabla despues de eliminar un registro
+        DefaultTableModel model = objetoMedicos.mostrarMedicos();
+        this.tbMedicos.setModel(model);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

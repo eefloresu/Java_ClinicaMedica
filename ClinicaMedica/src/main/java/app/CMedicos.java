@@ -225,4 +225,22 @@ public class CMedicos {
         }
     }
     
+    //Función para Eliminar Medicos.
+    public void eliminarMedicos(JTextField paramCodigo){
+        setCodigo (Integer.parseInt(paramCodigo.getText()));
+        
+        CConexion objetoConexion = new CConexion();
+        
+        String consulta = "DELETE FROM medicos WHERE medicos.idMedico = ?;";
+        
+        try {
+            CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
+            cs.setInt(1, getCodigo());
+            cs.execute();
+            JOptionPane.showMessageDialog(null, "Se elimino correctamente el consultorio");
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: "+e.toString());
+        }
+    } 
+    
 }
