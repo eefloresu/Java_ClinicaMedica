@@ -50,7 +50,7 @@ public class FormMedicos extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -95,7 +95,12 @@ public class FormMedicos extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Modificar");
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
 
@@ -128,7 +133,7 @@ public class FormMedicos extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                             .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -166,7 +171,7 @@ public class FormMedicos extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(btnGuardar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnModificar)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminar)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -185,6 +190,11 @@ public class FormMedicos extends javax.swing.JFrame {
 
             }
         ));
+        tbMedicos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbMedicosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbMedicos);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -211,9 +221,9 @@ public class FormMedicos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
+                .addGap(73, 73, 73)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,13 +248,28 @@ public class FormMedicos extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         CMedicos objetoMedicos = new CMedicos();
-        objetoMedicos.InsertarMedico(txtIdentificacion, txtNombre, txtApellido, txtEspecialidad, txtTelefono, txtCorreo);
+        objetoMedicos.InsertarMedico(txtIdentificacion,txtNombre,txtApellido,txtEspecialidad,txtTelefono,txtCorreo);
         
         //Mostrar tabla con el nuevo registro despues de guardar
         DefaultTableModel model = objetoMedicos.mostrarMedicos();
         this.tbMedicos.setModel(model);
         
     }//GEN-LAST:event_btnGuardarActionPerformed
+    
+    //Al hacer click sobre un registro se llenaran los campos automaticamente
+    private void tbMedicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbMedicosMouseClicked
+        CMedicos objetoMedicos = new CMedicos();
+        objetoMedicos.seleccionarMedicos(tbMedicos,txtId,txtIdentificacion,txtNombre,txtApellido,txtEspecialidad,txtTelefono,txtCorreo);
+    }//GEN-LAST:event_tbMedicosMouseClicked
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        CMedicos objetoMedicos = new CMedicos();
+        objetoMedicos.modificarMedicos(txtId, txtIdentificacion, txtNombre, txtApellido, txtEspecialidad, txtTelefono, txtCorreo);
+        
+        //Mostrar tabla con el nuevo registro despues de modificar
+        DefaultTableModel model = objetoMedicos.mostrarMedicos();
+        this.tbMedicos.setModel(model);
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,7 +309,7 @@ public class FormMedicos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

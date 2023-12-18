@@ -6,8 +6,10 @@ package app;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -159,5 +161,69 @@ public class CMedicos {
        return modelo;  
     }
     
+    //Función para Seleccionar el archivo que se va a modificar
+    public void seleccionarMedicos(JTable paramTablaMedicos, JTextField paramId, JTextField paramidentificacion, 
+            JTextField paramNombre, JTextField paramApellidos, JTextField paramEspecialidad, JTextField paramTelefono,
+            JTextField paramCorreo){
+       
+        try {
+           int fila = paramTablaMedicos.getSelectedRow();
+           
+            if (fila >= 0) {
+                paramId.setText((paramTablaMedicos.getValueAt(fila, 0).toString()));
+                paramidentificacion.setText((paramTablaMedicos.getValueAt(fila, 1).toString()));
+                paramNombre.setText((paramTablaMedicos.getValueAt(fila, 2).toString()));
+                paramApellidos.setText((paramTablaMedicos.getValueAt(fila, 3).toString()));
+                paramEspecialidad.setText((paramTablaMedicos.getValueAt(fila, 4).toString()));
+                paramTelefono.setText((paramTablaMedicos.getValueAt(fila, 5).toString()));
+                paramCorreo.setText((paramTablaMedicos.getValueAt(fila, 6).toString()));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Fila no seleccionada");
+            }
+        } catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null, "Error de selección, error: "+e.toString());
+        }
+    }
+    
+    //Función para modificar Medicos
+    public void modificarMedicos(JTextField paramCodigo, JTextField paramIdentificacion, 
+    JTextField paramNombre, JTextField paramApellidos, JTextField paramEspecialidad, 
+    JTextField paramTelefono, JTextField paramCorreo){       
+        
+        setCodigo(Integer.parseInt(paramCodigo.getText()));
+        setIdentificacion(paramIdentificacion.getText());
+        setNombres(paramNombre.getText());
+        setApellidos(paramApellidos.getText());
+        setEspecialidad(paramEspecialidad.getText());
+        setTelefono(paramTelefono.getText());
+        setCorreo(paramCorreo.getText());
+        
+        CConexion objetoConexion = new CConexion();
+        
+        String consulta = "UPDATE medicos SET medicos.medidentificacion = ?, medicos.mednombres = ?, "
+                + "medicos.medapellidos = ?, medicos.medEspecialidad = ?, medicos.medtelefono = ?, "
+                + "medicos.medcorreo = ? WHERE medicos.idMedico = ?;";
+        
+        try {
+            CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
+            //Incorporar parametros
+            cs.setString(1, getIdentificacion());
+            cs.setInt(2, getCodigo());
+            cs.setString(3, getNombres());
+            cs.setString(4, getApellidos());
+            cs.setString(5, getEspecialidad());
+            cs.setString(6, getTelefono());
+            cs.setString(7, getCorreo());
+            
+            cs.execute();
+            
+            JOptionPane.showMessageDialog(null, "Modificación exitosa");
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "No se modifico, error: "+ e.toString());
+        }
+    }
     
 }
