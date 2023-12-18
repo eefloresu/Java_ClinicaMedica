@@ -114,6 +114,7 @@ public class CConsultorio {
             JOptionPane.showMessageDialog(null, "Error de selección, error: "+e.toString());
         }
     }
+    
     //Función para actualizar Consultorios
     public void modificarConsultorios(JTextField paramCodigo, JTextField paramNombre){       
         setCodigo(Integer.parseInt(paramCodigo.getText()));
@@ -154,6 +155,5 @@ public class CConsultorio {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: "+e.toString());
         }
-    }
-    
+    }  
 }

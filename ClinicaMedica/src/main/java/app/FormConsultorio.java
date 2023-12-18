@@ -47,6 +47,7 @@ public class FormConsultorio extends javax.swing.JFrame {
         tbConsultorios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Clinica Medica");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Consultorio"));
 
@@ -185,7 +186,7 @@ public class FormConsultorio extends javax.swing.JFrame {
         CConsultorio objetoConsultorio = new CConsultorio();
         objetoConsultorio.InsertarConsultorio(txtNombre);
         
-        //Prueba Mostrar tabla con el nuevo registro
+        // Mostrar tabla con el nuevo registro despues de guardar
         DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
         this.tbConsultorios.setModel(model);
         
@@ -200,7 +201,7 @@ public class FormConsultorio extends javax.swing.JFrame {
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         CConsultorio objetoConsultorio = new CConsultorio();
         objetoConsultorio.modificarConsultorios(txtId,txtNombre);       
-        //Mostrar tabla con el registro modificado
+        //Mostrar tabla con el registro despues de modificar
         DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
         this.tbConsultorios.setModel(model);
         
@@ -209,7 +210,7 @@ public class FormConsultorio extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         CConsultorio objetoConsultorio = new CConsultorio();
         objetoConsultorio.eliminarConsultorios(txtId);       
-        //Mostrar tabla con el registro modificado
+        //Mostrar tabla despues de eliminar un registro
         DefaultTableModel model = objetoConsultorio.mostrarConsultorios();
         this.tbConsultorios.setModel(model);
     }//GEN-LAST:event_btnEliminarActionPerformed

@@ -13,8 +13,12 @@ package app;
  */
 public class inicio {
     public static void main(String[] args) {
+        /*
         FormConsultorio objetoFormulario = new FormConsultorio();
         objetoFormulario.setVisible(true);
+        */
+        FormMedicos objetoFormularioMedicos = new FormMedicos();
+        objetoFormularioMedicos.setVisible(true);
     }
 }
     
