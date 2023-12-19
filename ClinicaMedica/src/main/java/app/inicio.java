@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package app;
-
+import Formularios.FormMedicos;
+import Formularios.FormConsultorio;
+import Formularios.FormCitas;
 
 
 /**
@@ -16,9 +18,14 @@ public class inicio {
         /*
         FormConsultorio objetoFormulario = new FormConsultorio();
         objetoFormulario.setVisible(true);
-        */
+        
+        
         FormMedicos objetoFormularioMedicos = new FormMedicos();
         objetoFormularioMedicos.setVisible(true);
+        */
+        
+        FormCitas objetoFormularioCitas = new FormCitas();
+        objetoFormularioCitas.setVisible(true);
     }
 }
     
