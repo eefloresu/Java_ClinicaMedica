@@ -23,15 +23,16 @@ public class inicio {
         
         FormMedicos objetoFormularioMedicos = new FormMedicos();
         objetoFormularioMedicos.setVisible(true);        
-        
+        */
         FormCitas objetoFormularioCitas = new FormCitas();
         objetoFormularioCitas.setVisible(true);
-        
+        /*
         FormEspecialidades objetoEspecialidades = new FormEspecialidades();
         objetoEspecialidades.setVisible(true);
-        */
+        
         FormPacientes objetoFormularioPacientes = new FormPacientes();
         objetoFormularioPacientes.setVisible(true);
+        */
     }
 }
     

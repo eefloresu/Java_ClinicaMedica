@@ -18,7 +18,9 @@ public class FormCitas extends javax.swing.JFrame {
     public FormCitas() {
         initComponents();
         this.setLocationRelativeTo(null); //Centrar la ventana
+        txtId.setEnabled(false); //No mostrar el campo id al seleccionar una fila
         
+        //Mostrar citas despues de guardar
         CCitas objetoCitas = new CCitas();
         DefaultTableModel model = objetoCitas.mostrarCitas();
         this.tbCitas.setModel(model);
@@ -43,9 +45,6 @@ public class FormCitas extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtOrsevaciones = new javax.swing.JTextArea();
-        cbEstado = new javax.swing.JComboBox<>();
         txtConsultorio = new javax.swing.JTextField();
         txtMedico = new javax.swing.JTextField();
         txtPaciente = new javax.swing.JTextField();
@@ -55,6 +54,8 @@ public class FormCitas extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        txtEstado = new javax.swing.JTextField();
+        txtObservaciones = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbCitas = new javax.swing.JTable();
@@ -82,12 +83,6 @@ public class FormCitas extends javax.swing.JFrame {
 
         jLabel8.setText("Observaciones");
 
-        txtOrsevaciones.setColumns(20);
-        txtOrsevaciones.setRows(5);
-        jScrollPane2.setViewportView(txtOrsevaciones);
-
-        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asignado", "Atendido" }));
-
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,10 +99,9 @@ public class FormCitas extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel1)
@@ -117,23 +111,26 @@ public class FormCitas extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbEstado, 0, 109, Short.MAX_VALUE)
-                            .addComponent(txtConsultorio)
+                            .addComponent(txtConsultorio, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
                             .addComponent(txtMedico)
                             .addComponent(txtPaciente)
                             .addComponent(txtHora)
                             .addComponent(txtFecha)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEstado)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtObservaciones)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,12 +162,12 @@ public class FormCitas extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117)
                 .addComponent(btnGuardar)
                 .addGap(18, 18, 18)
                 .addComponent(btnModificar)
@@ -192,6 +189,11 @@ public class FormCitas extends javax.swing.JFrame {
 
             }
         ));
+        tbCitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbCitasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbCitas);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -239,12 +241,17 @@ public class FormCitas extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         CCitas objetoCitas = new CCitas();
-        objetoCitas.InsertarCita(txtFecha, txtHora, txtPaciente, txtMedico, txtConsultorio, txtMedico, txtConsultorio);
+        objetoCitas.InsertarCita(txtFecha, txtHora, txtPaciente, txtMedico, txtConsultorio, txtEstado, txtObservaciones);
         
         //Mostrar tabla con el nuevo registro despues de guardar
         DefaultTableModel model = objetoCitas.mostrarCitas();
         this.tbCitas.setModel(model);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void tbCitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbCitasMouseClicked
+        CCitas objetoCitas = new CCitas();
+        
+    }//GEN-LAST:event_tbCitasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -285,7 +292,6 @@ public class FormCitas extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JComboBox<String> cbEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -299,14 +305,14 @@ public class FormCitas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbCitas;
     private javax.swing.JTextField txtConsultorio;
+    private javax.swing.JTextField txtEstado;
     private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtHora;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtMedico;
-    private javax.swing.JTextArea txtOrsevaciones;
+    private javax.swing.JTextField txtObservaciones;
     private javax.swing.JTextField txtPaciente;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -19,15 +20,15 @@ import javax.swing.table.TableRowSorter;
  */
 public class CCitas {
     
-    private int codigo;
-    private String fecha;
-    private String hora;
-    private String paciente;
-    private String medico;
-    private String consultorio;
-    private String estado;
-    private String observaciones;
-    
+     int codigo;
+     String fecha;
+     String hora;
+     String paciente;
+     String medico;
+     String consultorio;
+     String estado;
+     String observaciones;
+
     public int getCodigo() {
         return codigo;
     }
@@ -75,7 +76,7 @@ public class CCitas {
     public void setConsultorio(String consultorio) {
         this.consultorio = consultorio;
     }
-
+    
     public String getEstado() {
         return estado;
     }
@@ -94,8 +95,8 @@ public class CCitas {
     
     //Función para Insertar nuevos Registros a la tabla Citas
     public void InsertarCita(JTextField paramFecha, JTextField paramHora, 
-            JTextField paramPaciente, JTextField paramMedico, JTextField paramConsultorio, 
-            JTextField paramEstado, JTextField paramObservaciones){
+        JTextField paramPaciente, JTextField paramMedico, JTextField paramConsultorio, 
+        JTextField paramEstado, JTextField paramObservaciones){
         
         setFecha(paramFecha.getText());
         setHora(paramHora.getText());
@@ -171,4 +172,8 @@ public class CCitas {
         }
        return modelo;  
     }
+    
+    //Función para Seleccionar el registro que se va a modificar
+   
+    
 }
