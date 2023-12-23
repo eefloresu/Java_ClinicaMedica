@@ -4,14 +4,13 @@
  */
 package Clases;
 
-import Clases.CConexion;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -20,10 +19,10 @@ import javax.swing.table.TableRowSorter;
  *
  * @author eefloresU
  */
-public class CConsultorio {
+public class CEspecialidades {
 
     int codigo;
-    String Nombre;
+    String nombre;
     
     public int getCodigo() {
         return codigo;
@@ -34,20 +33,20 @@ public class CConsultorio {
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-   
+     
     //Funcion para Insertar nuevos Registros 
-    public void InsertarConsultorio(JTextField paramNombre){
+    public void InsertarEspecialidad(JTextField paramNombre){
         setNombre (paramNombre.getText());
         
         CConexion objetoConexion = new  CConexion();
         
-        String consulta = "INSERT INTO consultorios (conNombre) VALUES (?);";
+        String consulta = "INSERT INTO especialidades (esp_Nombre) VALUES (?);";
         
         try {
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
@@ -55,14 +54,14 @@ public class CConsultorio {
             
             cs.execute();
             
-            JOptionPane.showMessageDialog(null,"Se inserto correctamente el consultorio");
+            JOptionPane.showMessageDialog(null,"Se inserto correctamente la Especialidad");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"No se ha insertado correctamente el consultorio, error: "+e.toString());
+            JOptionPane.showMessageDialog(null,"No se ha insertado correctamente la Especialidad, error: "+e.toString());
         }
     }
     
     //Función para mostrar registros existentes
-    public DefaultTableModel mostrarConsultorios(){
+    public DefaultTableModel mostrarEspecialidades(){
         CConexion objetoConexion = new CConexion();
         
         DefaultTableModel modelo = new DefaultTableModel();
@@ -72,7 +71,7 @@ public class CConsultorio {
         
         modelo.addColumn("Id");
         modelo.addColumn("Nombre");
-        sql = "SELECT * FROM consultorios ORDER BY idConsultorio DESC;"; // ASC para ordenar de forma descendente
+        sql = "SELECT * FROM especialidades ORDER BY id_especialidad DESC;"; // ASC para ordenar de forma descendente
         
         String[] datos = new String[2];
         Statement st;
@@ -95,14 +94,14 @@ public class CConsultorio {
     }
     
     //Función para Seleccionar el archivo que se va a modificar
-    public void seleccionarConsultorio(JTable paramTablaConsultorios, JTextField paramId, JTextField paramNombre){
+    public void seleccionarEspecialidad(JTable paramTablaEspecialidades, JTextField paramId, JTextField paramNombre){
        
         try {
-           int fila = paramTablaConsultorios.getSelectedRow();
+           int fila = paramTablaEspecialidades.getSelectedRow();
            
             if (fila >= 0) {
-                paramId.setText((paramTablaConsultorios.getValueAt(fila, 0).toString()));
-                paramNombre.setText((paramTablaConsultorios.getValueAt(fila, 1).toString()));
+                paramId.setText((paramTablaEspecialidades.getValueAt(fila, 0).toString()));
+                paramNombre.setText((paramTablaEspecialidades.getValueAt(fila, 1).toString()));
             }
             else{
                 JOptionPane.showMessageDialog(null, "Fila no seleccionada");
@@ -113,14 +112,14 @@ public class CConsultorio {
         }
     }
     
-    //Función para actualizar Consultorios
-    public void modificarConsultorios(JTextField paramCodigo, JTextField paramNombre){       
+    //Función para actualizar Especialidades
+    public void modificarEspecialidades(JTextField paramCodigo, JTextField paramNombre){       
         setCodigo(Integer.parseInt(paramCodigo.getText()));
         setNombre(paramNombre.getText());
         
         CConexion objetoConexion = new CConexion();
         
-        String consulta = "UPDATE consultorios SET consultorios.conNombre = ? WHERE consultorios.idConsultorio=?;";
+        String consulta = "UPDATE especialidades SET especialidades.esp_Nombre = ? WHERE especialidades.id_especialidad=?;";
         
         try {
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
@@ -137,13 +136,13 @@ public class CConsultorio {
         }
     }
     
-    //Función para Eliminar Consultorio.
-    public void eliminarConsultorios(JTextField paramCodigo){
+    //Función para Eliminar Especialidades.
+    public void eliminarEspecialidad(JTextField paramCodigo){
         setCodigo (Integer.parseInt(paramCodigo.getText()));
         
         CConexion objetoConexion = new CConexion();
         
-        String consulta = "DELETE FROM consultorios WHERE consultorios.idConsultorio=?;";
+        String consulta = "DELETE FROM especialidades WHERE especialidades.id_especialidad=?;";
         
         try {
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
@@ -153,5 +152,6 @@ public class CConsultorio {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: "+e.toString());
         }
-    }  
+    } 
+    
 }

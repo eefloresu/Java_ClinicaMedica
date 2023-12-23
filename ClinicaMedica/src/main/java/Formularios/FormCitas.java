@@ -89,6 +89,11 @@ public class FormCitas extends javax.swing.JFrame {
         cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asignado", "Atendido" }));
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnModificar.setText("Modificar");
 
@@ -231,6 +236,15 @@ public class FormCitas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        CCitas objetoCitas = new CCitas();
+        objetoCitas.InsertarCita(txtFecha, txtHora, txtPaciente, txtMedico, txtConsultorio, txtMedico, txtConsultorio);
+        
+        //Mostrar tabla con el nuevo registro despues de guardar
+        DefaultTableModel model = objetoCitas.mostrarCitas();
+        this.tbCitas.setModel(model);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments

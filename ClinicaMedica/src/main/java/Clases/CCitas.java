@@ -4,9 +4,11 @@
  */
 package Clases;
 
+import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -89,7 +91,41 @@ public class CCitas {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-     
+    
+    //Función para Insertar nuevos Registros a la tabla Citas
+    public void InsertarCita(JTextField paramFecha, JTextField paramHora, 
+            JTextField paramPaciente, JTextField paramMedico, JTextField paramConsultorio, 
+            JTextField paramEstado, JTextField paramObservaciones){
+        
+        setFecha(paramFecha.getText());
+        setHora(paramHora.getText());
+        setPaciente(paramPaciente.getText());
+        setMedico(paramMedico.getText());
+        setConsultorio(paramConsultorio.getText());
+        setEstado(paramEstado.getText());
+        setObservaciones(paramObservaciones.getText());
+        
+        CConexion objetoConexion = new  CConexion();
+        
+        String consulta = "INSERT INTO citas (citfecha, cithora, citPaciente, citMedico, "
+                        + "citConsultorio, citestado, citobservaciones) "
+                        + "VALUES (?,?,?,?,?,?,?);";        
+        try {
+            CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
+            cs.setString(1, getFecha());
+            cs.setString(2, getHora());
+            cs.setString(3, getPaciente());
+            cs.setString(4, getMedico());
+            cs.setString(5, getConsultorio());
+            cs.setString(6, getEstado());
+            cs.setString(7, getObservaciones());
+            
+            JOptionPane.showMessageDialog(null,"Medico ingresado correctamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"No se ha insertado correctamente el medico, error: "+e.toString());
+        }
+    }
+         
     //Función para mostrar registros existentes
     public DefaultTableModel mostrarCitas(){
         CConexion objetoConexion = new CConexion();

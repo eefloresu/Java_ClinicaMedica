@@ -6,6 +6,8 @@ package app;
 import Formularios.FormMedicos;
 import Formularios.FormConsultorio;
 import Formularios.FormCitas;
+import Formularios.FormEspecialidades;
+import Formularios.FormPacientes;
 
 
 /**
@@ -17,15 +19,19 @@ public class inicio {
     public static void main(String[] args) {
         /*
         FormConsultorio objetoFormulario = new FormConsultorio();
-        objetoFormulario.setVisible(true);
-        
+        objetoFormulario.setVisible(true);        
         
         FormMedicos objetoFormularioMedicos = new FormMedicos();
-        objetoFormularioMedicos.setVisible(true);
-        */
+        objetoFormularioMedicos.setVisible(true);        
         
         FormCitas objetoFormularioCitas = new FormCitas();
         objetoFormularioCitas.setVisible(true);
+        
+        FormEspecialidades objetoEspecialidades = new FormEspecialidades();
+        objetoEspecialidades.setVisible(true);
+        */
+        FormPacientes objetoFormularioPacientes = new FormPacientes();
+        objetoFormularioPacientes.setVisible(true);
     }
 }
     
