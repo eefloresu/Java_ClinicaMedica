@@ -91,8 +91,18 @@ public class FormCitas extends javax.swing.JFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -250,8 +260,27 @@ public class FormCitas extends javax.swing.JFrame {
 
     private void tbCitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbCitasMouseClicked
         CCitas objetoCitas = new CCitas();
+        objetoCitas.seleccionarCitas(tbCitas, txtId, txtFecha, txtHora, txtPaciente, txtMedico, txtConsultorio, txtEstado, txtObservaciones);
         
     }//GEN-LAST:event_tbCitasMouseClicked
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        CCitas objetoCitas = new CCitas();
+        objetoCitas.modificarCitas(txtId, txtFecha, txtHora, txtPaciente, txtMedico, txtConsultorio, txtEstado, txtObservaciones);
+        
+        //Mostrar tabla con el nuevo registro despues de modificar
+        DefaultTableModel model = objetoCitas.mostrarCitas();
+        this.tbCitas.setModel(model);
+    }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        CCitas objetoCitas = new CCitas();
+        objetoCitas.eliminarCitas(txtId);
+        
+        //Mostrar tabla despues de eliminar un registro
+        DefaultTableModel model = objetoCitas.mostrarCitas();
+        this.tbCitas.setModel(model);
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

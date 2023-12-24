@@ -98,6 +98,7 @@ public class CPacientes {
             cs.setString (3, getApellidos());
             cs.setString (4, getFechaNacimiento());
             cs.setString (5, getSexo());
+            
             cs.execute();
             
             JOptionPane.showMessageDialog(null,"Paciente ingresado correctamente");
@@ -224,7 +225,7 @@ public class CPacientes {
             cs.setInt(1, getCodigo());
             cs.execute();
             
-            JOptionPane.showMessageDialog(null, "Se elimino correctamente el consultorio");
+            JOptionPane.showMessageDialog(null, "Se elimino correctamente el paciente");
             
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: "+e.toString());

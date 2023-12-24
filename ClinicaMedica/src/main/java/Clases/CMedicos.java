@@ -238,7 +238,7 @@ public class CMedicos {
             CallableStatement cs = objetoConexion.estableceConexion().prepareCall(consulta);
             cs.setInt(1, getCodigo());
             cs.execute();
-            JOptionPane.showMessageDialog(null, "Se elimino correctamente el consultorio");
+            JOptionPane.showMessageDialog(null, "Se elimino correctamente el medico");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: "+e.toString());
         }
