@@ -147,7 +147,15 @@ public class CCitas {
         modelo.addColumn("Estado");
         modelo.addColumn("Observaciones");
         
-        sql = "SELECT * FROM citas ORDER BY idCita DESC;"; // ASC para ordenar de forma Ascendente
+        //sql = "SELECT * FROM citas ORDER BY idCita DESC;"; // ASC para ordenar de forma Ascendente
+        
+        sql = "SELECT c.idcita,c.citfecha,c.cithora,p.pacNombre AS nombrePaciente,m.mednombres AS nombreMedico,\n"
+                + "con.conNombre AS nombreConsultorio,c.citestado,c.citobservaciones\n"
+                + "FROM citas c\n"
+                + "JOIN pacientes p ON c.citPaciente = p.idPaciente\n"
+                + "JOIN medicos m ON c.citMedico = m.idMedico\n"
+                + "JOIN consultorios con ON c.citConsultorio = con.idConsultorio\n"
+                + "ORDER BY c.idcita DESC;";
         
         String[] datos = new String[8];
         Statement st;
@@ -169,7 +177,7 @@ public class CCitas {
                 
                 modelo.addRow(datos);
             }           
-        } catch (Exception e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,"No se pudo mostrar los registros, error: "+ e.toString());
         }
        return modelo;  

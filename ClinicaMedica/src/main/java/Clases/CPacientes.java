@@ -1,19 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Clases;
 
+import java.awt.HeadlessException;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -102,7 +112,7 @@ public class CPacientes {
             cs.execute();
             
             JOptionPane.showMessageDialog(null,"Paciente ingresado correctamente");
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null,"No se ha insertado correctamente el paciente, error: "+e.toString());
         }
     }
@@ -230,6 +240,30 @@ public class CPacientes {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: "+e.toString());
         }
-    } 
+    }
+    
+    // Nueva función para imprimir el reporte 'Pacientes.jasper'
+    public void imprimirReporte() {
+        try {
+            // Ruta del archivo JasperReport
+            String reportPath = "src\\main\\resources\\Reportes\\Pacientes.jasper";
+
+            // Parámetros, si es necesario
+            Map<String, Object> parametros = new HashMap<>();
+
+            // Conexión a la base de datos, si es necesario
+            CConexion objetoConexion = new CConexion();
+
+            // Generar el informe
+            InputStream inputStream = new BufferedInputStream(new FileInputStream(new File(reportPath)));
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObject(inputStream);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, objetoConexion.estableceConexion());
+
+            // Visualizar el informe
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (FileNotFoundException | JRException  e) {
+            JOptionPane.showMessageDialog(null, "Error al imprimir el reporte: " + e.toString());
+        }
+    }
     
 }

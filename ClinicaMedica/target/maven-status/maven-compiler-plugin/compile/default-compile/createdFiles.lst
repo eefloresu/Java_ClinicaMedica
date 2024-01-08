@@ -1,8 +1,10 @@
 Formularios\FormPrincipal$4.class
 Formularios\FormPacientes$4.class
 Formularios\FormEspecialidades$3.class
+Formularios\FormPacientes$8.class
 Formularios\FormPrincipal$1.class
 Formularios\FormConsultorio$5.class
+Formularios\FormEspecialidades$6.class
 Clases\CConsultorio.class
 Formularios\FormPacientes.class
 Clases\CConexion.class
@@ -18,6 +20,7 @@ Formularios\FormCitas$3.class
 Formularios\FormMedicos$6.class
 Formularios\FormConsultorio$3.class
 Formularios\FormMedicos$3.class
+Formularios\FormConsultorio$6.class
 Formularios\FormPrincipal$2.class
 Formularios\FormPacientes$6.class
 Formularios\FormCitas$4.class
@@ -42,8 +45,8 @@ Formularios\FormEspecialidades$2.class
 Formularios\FormPacientes$7.class
 Formularios\FormPrincipal$3.class
 Formularios\FormMedicos$1.class
+Formularios\FormMedicos$8.class
 Clases\CCitas.class
-Formularios\FormPrincipal$7.class
 Formularios\FormCitas$1.class
 Formularios\FormEspecialidades$5.class
 Formularios\FormPacientes$1.class

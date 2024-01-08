@@ -10,6 +10,7 @@ public class inicio {
         
         FormPrincipal objetoPrincipal = new FormPrincipal();
         objetoPrincipal.setVisible(true);
+
     }
 }
     
