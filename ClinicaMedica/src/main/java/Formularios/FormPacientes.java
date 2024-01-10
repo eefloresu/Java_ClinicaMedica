@@ -111,7 +111,7 @@ public class FormPacientes extends javax.swing.JFrame {
             }
         });
 
-        btnImprimir.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\imprimir.png")); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imprimir.png"))); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImprimirActionPerformed(evt);
@@ -146,19 +146,19 @@ public class FormPacientes extends javax.swing.JFrame {
                                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(87, 87, 87)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                            .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                             .addComponent(txtApellidos)
                             .addComponent(txtNombre)
                             .addComponent(txtIdentificacion)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtId)
-                                    .addComponent(txtSexo, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                                    .addComponent(txtSexo, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
                                 .addGap(90, 90, 90))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(btnModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                             .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLimpiar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -204,7 +204,7 @@ public class FormPacientes extends javax.swing.JFrame {
                 .addComponent(btnLimpiar)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminar)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Pacientes"));
@@ -233,7 +233,7 @@ public class FormPacientes extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(

@@ -129,7 +129,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\citas.png"/>
+              <Image iconType="3" name="/Imagenes/citas.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Citas"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -159,7 +159,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\pacientes.png"/>
+              <Image iconType="3" name="/Imagenes/pacientes.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Pacientes"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -189,7 +189,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\especialidades.png"/>
+              <Image iconType="3" name="/Imagenes/especialidades.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Especialidades"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -219,7 +219,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\medical-29_icon-icons.com_73943.png"/>
+              <Image iconType="3" name="/Imagenes/medical-29_icon-icons.com_73943.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Medicos"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -249,7 +249,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\consultorios.png"/>
+              <Image iconType="3" name="/Imagenes/consultorios.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Consultorios"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -279,7 +279,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\salir.png"/>
+              <Image iconType="3" name="/Imagenes/salir.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -350,31 +350,15 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="jLabel3" pref="466" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="521" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="987" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel3" min="-2" pref="496" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
+              <EmptySpace min="0" pref="618" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\eeflo\Documents\NetBeansProjects\Java_ClinicaMedica\ClinicaMedica\src\main\java\Imagenes\medicos.png"/>
-            </Property>
-          </Properties>
-        </Component>
-      </SubComponents>
     </Container>
   </SubComponents>
 </Form>

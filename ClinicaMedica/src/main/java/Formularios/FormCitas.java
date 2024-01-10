@@ -110,7 +110,7 @@ public class FormCitas extends javax.swing.JFrame {
             }
         });
 
-        btnImprimir.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\imprimir.png")); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imprimir.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -214,7 +214,7 @@ public class FormCitas extends javax.swing.JFrame {
                 .addComponent(btnLimpiar)
                 .addGap(18, 18, 18)
                 .addComponent(btnEliminar)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Citas"));

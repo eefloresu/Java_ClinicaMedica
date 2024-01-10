@@ -83,7 +83,7 @@ public class FormEspecialidades extends javax.swing.JFrame {
             }
         });
 
-        btnImprimir.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\imprimir.png")); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imprimir.png"))); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImprimirActionPerformed(evt);
@@ -175,7 +175,7 @@ public class FormEspecialidades extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                 .addGap(13, 13, 13))
         );
         jPanel2Layout.setVerticalGroup(

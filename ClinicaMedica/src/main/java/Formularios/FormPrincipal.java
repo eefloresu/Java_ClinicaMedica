@@ -33,7 +33,6 @@ public class FormPrincipal extends javax.swing.JFrame {
         mensaje = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema Clinica Medica");
@@ -48,7 +47,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         btnCitas.setBackground(new java.awt.Color(0, 153, 153));
         btnCitas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCitas.setForeground(new java.awt.Color(255, 255, 255));
-        btnCitas.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\citas.png")); // NOI18N
+        btnCitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/citas.png"))); // NOI18N
         btnCitas.setText("Citas");
         btnCitas.setBorder(null);
         btnCitas.setBorderPainted(false);
@@ -63,7 +62,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         btnPacientes.setBackground(new java.awt.Color(0, 153, 153));
         btnPacientes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnPacientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnPacientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\pacientes.png")); // NOI18N
+        btnPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pacientes.png"))); // NOI18N
         btnPacientes.setText("Pacientes");
         btnPacientes.setBorder(null);
         btnPacientes.setBorderPainted(false);
@@ -78,7 +77,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         btnEspecialidades.setBackground(new java.awt.Color(0, 153, 153));
         btnEspecialidades.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnEspecialidades.setForeground(new java.awt.Color(255, 255, 255));
-        btnEspecialidades.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\especialidades.png")); // NOI18N
+        btnEspecialidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/especialidades.png"))); // NOI18N
         btnEspecialidades.setText("Especialidades");
         btnEspecialidades.setBorder(null);
         btnEspecialidades.setBorderPainted(false);
@@ -93,7 +92,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         btnMedicos.setBackground(new java.awt.Color(0, 153, 153));
         btnMedicos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnMedicos.setForeground(new java.awt.Color(255, 255, 255));
-        btnMedicos.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\medical-29_icon-icons.com_73943.png")); // NOI18N
+        btnMedicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medical-29_icon-icons.com_73943.png"))); // NOI18N
         btnMedicos.setText("Medicos");
         btnMedicos.setBorder(null);
         btnMedicos.setBorderPainted(false);
@@ -108,7 +107,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         btnConsultorios.setBackground(new java.awt.Color(0, 153, 153));
         btnConsultorios.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnConsultorios.setForeground(new java.awt.Color(255, 255, 255));
-        btnConsultorios.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\consultorios.png")); // NOI18N
+        btnConsultorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/consultorios.png"))); // NOI18N
         btnConsultorios.setText("Consultorios");
         btnConsultorios.setBorder(null);
         btnConsultorios.setBorderPainted(false);
@@ -123,7 +122,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         btnSalir.setBackground(new java.awt.Color(0, 153, 153));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\salir.png")); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setBorder(null);
         btnSalir.setBorderPainted(false);
@@ -202,22 +201,15 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         content.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\medicos.png")); // NOI18N
-
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contentLayout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 466, Short.MAX_VALUE)
-                .addGap(521, 521, 521))
+            .addGap(0, 987, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contentLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 618, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,7 +276,6 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel mensaje;
     private javax.swing.JPanel menus;
     // End of variables declaration//GEN-END:variables

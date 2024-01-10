@@ -81,7 +81,7 @@ public class FormConsultorio extends javax.swing.JFrame{
             }
         });
 
-        btnImprimir.setIcon(new javax.swing.ImageIcon("C:\\Users\\eeflo\\Documents\\NetBeansProjects\\Java_ClinicaMedica\\ClinicaMedica\\src\\main\\java\\Imagenes\\imprimir.png")); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/imprimir.png"))); // NOI18N
         btnImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImprimirActionPerformed(evt);

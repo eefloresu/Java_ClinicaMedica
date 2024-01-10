@@ -154,7 +154,7 @@ public class CPacientes {
                 
                 modelo.addRow(datos);
             }           
-        } catch (Exception e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,"No se pudo mostrar los registros, error: "+ e.toString());
         }
        return modelo;  
@@ -242,7 +242,7 @@ public class CPacientes {
         }
     }
     
-    // Nueva función para imprimir el reporte 'Pacientes.jasper'
+    // función para imprimir el reporte 'Pacientes.jasper'
     public void imprimirReporte() {
         try {
             // Ruta del archivo JasperReport
@@ -251,7 +251,7 @@ public class CPacientes {
             // Parámetros, si es necesario
             Map<String, Object> parametros = new HashMap<>();
 
-            // Conexión a la base de datos, si es necesario
+            // Conexión a la base de datos
             CConexion objetoConexion = new CConexion();
 
             // Generar el informe
